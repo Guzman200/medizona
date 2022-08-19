@@ -6,7 +6,7 @@
             <div class="w-full lg:w-5/6">
                 <div class="bg-white shadow-md rounded my-6">
 
-                    <button
+                    <button @click="toNewNote()"
                         type="button"
                         class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
                     >
@@ -107,6 +107,9 @@ export default {
             })
 
         },
+        toNewNote(){
+            this.$router.push({name : 'new-note'})
+        }
     }
 }
 </script>
