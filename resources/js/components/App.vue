@@ -1,53 +1,20 @@
 <template>
-    <div>
-        <div id="loader"></div>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <router-link to="/" class="navbar-brand">App tareas</router-link>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarText"
-                aria-controls="navbarText"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <router-link class="nav-link" to="/"
-                            >Tareas <span class="sr-only"></span
-                        ></router-link>
-                    </li>
-                </ul>
-                <span
-                    class="navbar-text"
-                    @click="cerrarSesion"
-                    style="cursor: pointer"
-                >
-                    Cerrar sesión
-                </span>
-            </div>
-        </nav>
-
-        <div class="container-fluid mt-4">
-
-            <div class="row mb-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            Hola {{nombre()}} es hora de administrar tus tareas!
-                        </div>
-                    </div>
+        <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-md w-full space-y-8">
+                <div>
+                    <img class="mx-auto h-12 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600" alt="Workflow">
+                    <h2 class="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">
+                        Dashboard de {{nombre()}}
+                    </h2>
+                    <p class="mt-2 text-center text-sm text-gray-600">
+                        <a href="#" class="font-medium text-danger-600 hover:text-indigo-500">
+                            Texto
+                        </a>
+                    </p>
                 </div>
             </div>
-
-            <router-view></router-view>
         </div>
-    </div>
 </template>
 
 <script>
@@ -69,19 +36,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.btn-primary {
-    background-color: #d32f36 !important;
-    border-color: #d32f36 !important;
-}
-
-.theme-primary .btn-primary:hover,
-.theme-primary .btn-primary:active,
-.theme-primary .btn-primary:focus,
-.theme-primary .btn-primary.active {
-    background-color: #c01c26 !important;
-    border-color: #c01c26 !important;
-    color: #ffffff !important;
-}
-</style>
