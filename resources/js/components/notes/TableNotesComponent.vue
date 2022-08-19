@@ -1,9 +1,19 @@
 <template>
+
     <!-- component -->
-<div class="overflow-x-auto">
+    <div class="overflow-x-auto">
         <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
             <div class="w-full lg:w-5/6">
                 <div class="bg-white shadow-md rounded my-6">
+
+                    <button
+                        type="button"
+                        class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
+                    >
+                        Add note
+                    </button>
+
+
                     <table class="min-w-max w-full table-auto">
                         <thead>
                             <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
