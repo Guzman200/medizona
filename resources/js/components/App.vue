@@ -9,7 +9,15 @@
                     </h2>
                     <p class="mt-2 text-center text-sm text-gray-600">
                         <a href="#" class="font-medium text-danger-600 hover:text-indigo-500">
-                            Texto
+                            Opción 1
+                        </a>
+                        <hr>
+                        <a href="#" class="font-medium text-danger-600 hover:text-indigo-500">
+                            Opción 2
+                        </a>
+                        <hr>
+                        <a @click="cerrarSesion()" href="#" class="font-medium text-danger-600 hover:text-indigo-500">
+                            Cerrar sesión
                         </a>
                     </p>
                 </div>
