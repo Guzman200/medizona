@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Autenticacion;
 use App\Events\UserLogin;
 use App\Events\UserLogout;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\autenticacion\ChangePasswordRequest;
 use App\Http\Requests\autenticacion\LoginRequest;
 use App\Http\Requests\autenticacion\RecoverPasswordRequest;
 use App\Http\Requests\User\RegisterRequest;
@@ -99,5 +100,17 @@ class InicioSesionController extends Controller
 
         return response()->json([]);
 
+    }
+
+    public function changePassword(ChangePasswordRequest $request)
+    {
+
+        $user = User::where('email', $request->email)->first();
+
+        $user->password = Hash::make($request->password);
+        $user->token = "";
+        $user->update();
+
+        return response()->json([]);
     }
 }
