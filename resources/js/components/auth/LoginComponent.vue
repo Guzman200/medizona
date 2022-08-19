@@ -42,8 +42,8 @@
                         </div>
 
                         <div class="text-sm">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> ¿Olvidaste tu contraseña?
-                            </a>
+                            <router-link to="recuperar-contrasenia" href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> ¿Olvidaste tu contraseña?
+                            </router-link>
                         </div>
                     </div>
 
@@ -62,10 +62,6 @@
                 </form>
             </div>
         </div>
-
-
-        
-
     </div>
 
 </template>

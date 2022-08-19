@@ -8,6 +8,8 @@ Route::post('login', [InicioSesionController::class, 'login']);
 
 Route::post('register', [InicioSesionController::class, 'register']);
 
+Route::post('recover-password', [InicioSesionController::class, 'sendEmail']);
+
 /** ============> ENDPOINTS CON AUTENTICACION <============================= */
 Route::group(['middleware' => 'auth:sanctum'], function () {
 

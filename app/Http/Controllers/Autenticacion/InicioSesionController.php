@@ -6,6 +6,7 @@ use App\Events\UserLogin;
 use App\Events\UserLogout;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\autenticacion\LoginRequest;
+use App\Http\Requests\autenticacion\RecoverPasswordRequest;
 use App\Http\Requests\User\RegisterRequest;
 use App\Models\User;
 use App\Services\HelperService;
@@ -74,5 +75,12 @@ class InicioSesionController extends Controller
         ]);
 
         return response()->json(['title' => 'Usuario registrado correctamente']);
+    }
+
+    public function sendEmail(RecoverPasswordRequest $request)
+    {
+
+        return response()->json([]);
+
     }
 }
