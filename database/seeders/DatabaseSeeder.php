@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Customer;
 use App\Models\Genero;
+use App\Models\Item;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,5 +19,7 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         
         $this->call(UserSeeder::class);
+        Customer::factory(10)->create();
+        Item::factory(50)->create();
     }
 }
