@@ -7,5 +7,5 @@ Route::get('inicio-sesion', [InicioSesionController::class, 'index'])
     ->name('login');
 
 
-Route::get('cambio-password/{token?}/{email?}', [InicioSesionController::class, 'index'])
+Route::get('recover-password/{token}/{email}', [InicioSesionController::class, 'index'])
     ->name('cambiar_password');

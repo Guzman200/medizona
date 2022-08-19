@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\autenticacion\LoginRequest;
 use App\Http\Requests\autenticacion\RecoverPasswordRequest;
 use App\Http\Requests\User\RegisterRequest;
+use App\Mail\estandarMail;
 use App\Models\User;
 use App\Services\HelperService;
 use App\Services\SuspencionService;
@@ -15,6 +16,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class InicioSesionController extends Controller
 {
@@ -79,6 +82,20 @@ class InicioSesionController extends Controller
 
     public function sendEmail(RecoverPasswordRequest $request)
     {
+
+        $user = User::where('email', $request->email)->first();
+
+        $token = Str::random(60);
+
+        $user->token = $token;
+        $user->update();
+
+        $url = route("cambiar_password", ['token' => $token, 'email' => $request->email]);
+
+        Mail::to($request->email)->send(
+            new estandarMail("Recuperación de contraseña", 
+                "Ha solicitador una recuperación de contraseña", "Restaurar contraseña", $url, "Restauración de contraseña")
+        );
 
         return response()->json([]);
 
