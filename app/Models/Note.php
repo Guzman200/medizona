@@ -11,4 +11,11 @@ class Note extends Model
 
     protected $table = "notes";
     protected $guarded = [];
+
+    /** Relations */
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id', 'id');
+    }
 }
