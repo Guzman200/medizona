@@ -9,6 +9,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     Route::get('notes', [NoteController::class, 'index']);
     Route::post('notes', [NoteController::class, 'store']);
+    Route::delete('notes/{note}', [NoteController::class, 'destroy']);
     Route::get('items', [NoteController::class, 'getItems']);
     Route::get('customers', [NoteController::class, 'getCustomers']);
 

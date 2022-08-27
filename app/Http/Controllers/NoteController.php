@@ -65,4 +65,13 @@ class NoteController extends Controller
         
 
     }
+
+    public function destroy(Note $note)
+    {
+        NoteItem::where('note_id', $note->id)->delete();
+        $note->delete();
+
+        return response()->json([], 200);
+    }
+
 }
