@@ -6,7 +6,7 @@ import CreateNoteComponent from './components/notes/CreateNoteComponent'
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: TableNotesComponent },
+        { path: '/', component: TableNotesComponent, name : 'home' },
         { path: '/new-note', component: CreateNoteComponent, name: 'new-note' }
     ]
 })

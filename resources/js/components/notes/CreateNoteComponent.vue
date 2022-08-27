@@ -1,7 +1,32 @@
 <template>
     <div>
+
+        
+                    
+
         <div class="min-w-screen flex items-center justify-center font-sans overflow-hidden">
             <div class="w-full lg:w-4/6">
+
+                <button type="button" class="
+                    px-6
+                    py-2.5
+                    bg-blue-600
+                    text-white
+                    font-medium
+                    text-xs
+                    leading-tight
+                    uppercase
+                    rounded
+                    shadow-md
+                    hover:bg-blue-700 hover:shadow-lg
+                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                    active:bg-blue-800 active:shadow-lg
+                    transition
+                    duration-150
+                    ease-in-out"
+                    @click="irANotas()">
+                    Regresar a mis notas
+                </button>
 
                 <div v-if="success" class="alert bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show" role="alert">
                     <strong class="mr-1">Nota creada!</strong>
@@ -346,6 +371,9 @@ export default {
                 this.cargando = false;
             })
 
+        },
+        irANotas(){
+            this.$router.push({name: "home"})
         }
     },
     computed: {
