@@ -11,4 +11,11 @@ class NoteItem extends Model
 
     protected $table = "note_items";
     protected $guarded = [];
+
+    /** Relations */
+
+    public function item()
+    {
+        return $this->belongsTo(Item::class, 'item_id', 'id');
+    }
 }
